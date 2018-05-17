@@ -96,7 +96,7 @@ button.addEventListener('click', function () {
         var titleParagraph = document.createTextNode(commentS);
 
         /* Versión 0.0.5 */
-        containerMainLast.appendChild(newDiv, containerMainLast.childNodes[0]);
+        p.appendChild(newDiv);
         newDiv.appendChild(paragraph);
         paragraph.appendChild(titleParagraph);
     });
