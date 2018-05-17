@@ -260,6 +260,7 @@ p {
     padding: 8px 10px;
     line-height: 18px;
 }
+
 #a {
     text-decoration: none;
     border-radius: 0 0 3px 3px;
@@ -288,7 +289,8 @@ p {
     padding: 4px;
 }
 
-#a, #node{
+#a,
+#node {
     background-color: rgb(181, 194, 194);
     width: auto;
     height: auto;
@@ -302,7 +304,7 @@ img:hover {
     opacity: .5;
 }
 
-.input-search:hover{
+.input-search:hover {
     opacity: .9;
 }
 

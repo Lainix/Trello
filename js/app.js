@@ -1,11 +1,11 @@
 // Variables globales
-var addList = document.getElementById('insert-list');  
+var addList = document.getElementById('insert-list');
 var button = document.getElementById('btn-agregar');
 
 
 
 /* Versión 0.0.1 */
-addList.addEventListener('click', function (event) { 
+addList.addEventListener('click', function (event) {
     var hideFirst = document.getElementById('insert-list');
     hideFirst.id = 'first';
     // hideFirst.style.display = 'none'; 
@@ -14,7 +14,7 @@ addList.addEventListener('click', function (event) {
     // showSecond.id = 'second';
     // showSecond.style = 'second';
     showSecond.style.display = 'block';
-    
+
 });
 
 
@@ -30,16 +30,16 @@ button.addEventListener('click', function (event) {
     document.getElementById("container").style.display = "block";
 });
 
-button.addEventListener('click', function(){ 
+button.addEventListener('click', function () {
     event.preventDefault();
     // button.id = 'float';
     // button.style.display = "float";
     var comment = document.getElementById('taskInput').value; // .toUpperCase(); // tenemos que tomar el texto ingresado en el textarea     	
-	document.getElementById('taskInput').value = ''; //limpiar el textarea
+    document.getElementById('taskInput').value = ''; //limpiar el textarea
     var containerMain = document.getElementById('container'); //contenedor que esta en el html
     containerMain.classList.add('hide-container');
     var p = document.createElement('p');    // que va a contener el texto
-    var title = document.createTextNode(comment);        
+    var title = document.createTextNode(comment);
     var a = document.createElement('a');  // crear a para el texto
     a.setAttribute("href", "#");
     a.classList.add('taskA');
@@ -49,8 +49,8 @@ button.addEventListener('click', function(){
     // se juntan
     p.appendChild(title);
     a.appendChild(text);
-    containerMain.appendChild(p); 
-    
+    containerMain.appendChild(p);
+
     containerMain.appendChild(a);
 
     //validar que textarea tenga un mensaje
@@ -70,35 +70,35 @@ button.addEventListener('click', function(){
         textareaSecond.id = 'saveArea';
         textareaSecond.classList.add('listInput');
 
-        
+
         var buttonSecond = document.createElement('input');
         buttonSecond.setAttribute('value', 'Añadir');
         buttonSecond.setAttribute('type', 'submit');
         buttonSecond.classList.add('add');
 
         buttonSecond.addEventListener("focus", function () {
-            });
+        });
 
         secondForm.appendChild(textareaSecond);
         secondForm.appendChild(buttonSecond);
         event.target.appendChild(secondForm);
-        buttonSecond.disabled = false;        
+        buttonSecond.disabled = false;
 
         /* Versión 0.0.4 */
-        textareaSecond.focus();      
+        textareaSecond.focus();
         var containerMainLast = document.getElementById('h');
-        var commentS = document.getElementById('saveArea').value; 
+        var commentS = document.getElementById('saveArea').value;
         document.getElementById('saveArea').value = '';
         var newDiv = document.createElement('div');
         newDiv.id = 'divNew';    // creo un id
-        
+
         var paragraph = document.createElement('p');
         var titleParagraph = document.createTextNode(commentS);
 
         /* Versión 0.0.5 */
-        containerMainLast.appendChild(newDiv);
+        containerMainLast.appendChild(newDiv, containerMainLast.childNodes[0]);
         newDiv.appendChild(paragraph);
-        paragraph.appendChild(titleParagraph);    
+        paragraph.appendChild(titleParagraph);
     });
 });
 
