@@ -7,10 +7,10 @@ var button = document.getElementById('btn-agregar');
 /* Versión 0.0.1 */
 addList.addEventListener('click', function (event) { 
     var hideFirst = document.getElementById('insert-list');
-    hideFirst.id = 'first';                                         
+    hideFirst.id = 'first';
     // hideFirst.style.display = 'none'; 
     hideFirst.style = 'first';
-    var showSecond = document.getElementById('form');                  
+    var showSecond = document.getElementById('form');
     // showSecond.id = 'second';
     // showSecond.style = 'second';
     showSecond.style.display = 'block';
@@ -51,7 +51,46 @@ button.addEventListener('click', function(){
     if (comment.length == 0 || comment == null) {
         alert('Debes ingresar un mensaje');
         return false;
-    };  
+    };
+
+
+    /* Versión 0.0.3 */
+    a.addEventListener('click', function (event) {
+        event.preventDefault();
+        a.classList.toggle("taskA");
+
+        var secondForm = document.createElement("form");
+        var textareaSecond = document.createElement('textarea');
+        textareaSecond.id = 'saveArea';
+        textareaSecond.classList.add('listInput');
+
+        
+        var buttonSecond = document.createElement('input');
+        buttonSecond.setAttribute('value', 'Añadir');
+        buttonSecond.setAttribute('type', 'submit');
+        buttonSecond.classList.add('add');
+
+        buttonSecond.addEventListener("focus", function () {
+            //   this.style.backgroundColor = "white";  
+            });
+
+        secondForm.appendChild(textareaSecond);
+        secondForm.appendChild(buttonSecond);
+        event.target.appendChild(secondForm);
+        buttonSecond.disabled = false;        
+
+        /* Versión 0.0.4 */
+        textareaSecond.focus();      
+        var containerMainLast = document.getElementById('h');
+        var commentS = document.getElementById('saveArea').value; 
+        document.getElementById('saveArea').value = '';
+        var newDiv = document.createElement('div');
+        newDiv.id = 'divNew';    // creo un id
+        
+        var paragraph = document.createElement('p');
+        var titleParagraph = document.createTextNode(commentS);
+   
+    });
 });
 
 
