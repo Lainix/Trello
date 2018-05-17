@@ -40,6 +40,7 @@ button.addEventListener('click', function(){
     a.classList.add('taskA');
     a.id = 'a';
     var text = document.createTextNode('Añadir una tarea...');
+    text.id = 'node';
     // se juntan
     p.appendChild(title);
     a.appendChild(text);
