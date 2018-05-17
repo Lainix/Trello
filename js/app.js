@@ -19,9 +19,12 @@ addList.addEventListener('click', function (event) {
 
 
 /* Versión 0.0.2 */
-function getFocus() {
-    document.getElementById("taskInput").focus();  // taskInput  =  tareaInput
-};
+// function getFocus() {
+//     document.getElementById("taskInput").focus();  // taskInput  =  tareaInput
+// };
+
+button.addEventListener("focus", function () {
+});
 
 button.addEventListener('click', function (event) {
     document.getElementById("container").style.display = "block";
@@ -29,6 +32,8 @@ button.addEventListener('click', function (event) {
 
 button.addEventListener('click', function(){ 
     event.preventDefault();
+    // button.id = 'float';
+    // button.style.display = "float";
     var comment = document.getElementById('taskInput').value; // .toUpperCase(); // tenemos que tomar el texto ingresado en el textarea     	
 	document.getElementById('taskInput').value = ''; //limpiar el textarea
     var containerMain = document.getElementById('container'); //contenedor que esta en el html
@@ -72,7 +77,6 @@ button.addEventListener('click', function(){
         buttonSecond.classList.add('add');
 
         buttonSecond.addEventListener("focus", function () {
-            //   this.style.backgroundColor = "white";  
             });
 
         secondForm.appendChild(textareaSecond);
